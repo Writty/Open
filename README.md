@@ -28,3 +28,7 @@ Things it would be nice to include in the future
 * Export in more formats (TXT,HTML)
 * Markdown implementation
 
+## Current Bugs
+
+* In the webapp version the **insert Link** function doesn't work for some reason.
+
