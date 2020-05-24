@@ -1,0 +1,430 @@
+body {
+    margin: 0;
+    color: var(--text);
+    font-size: 21px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    display: block;
+    margin-block-start: 16px;
+    margin-block-end: 16px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+    margin-block-start: 14px;
+    margin-block-end: 14px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+p {
+    font-size: 21px;
+    display: block;
+    margin-block-start: 12px;
+    margin-block-end: 12px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    display: block;
+    margin-block-start: -3px;
+    margin-block-end: 10px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+blockquote {
+    font-size: 21px;
+    color: var(--text);
+    font-style: italic;
+    display: block;
+    padding: 17px;
+    margin-block-start: 12px;
+    margin-block-end: 12px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.imgView {
+    width: fit-content;
+    padding: 20px 0px 20px 0px;
+}
+
+.topbar {
+    overflow: hidden;
+    background: var(--background);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.topbar-row {
+    max-width: 900px;
+    margin: auto;
+    display: block;
+    text-align: right;
+}
+
+.topbar-button {
+    font-family: 'ubuntu', sans-serif;
+    color: var(--text);
+    font-size: 15px;
+    border: 0;
+    padding: 20px 30px 30px 21px;
+    cursor: pointer;
+    background: var(--background);
+    float: right;
+    border-right: solid 1.2px #cdcdcd;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.topbar-button:hover {
+    outline: none;
+    color: #fcaf12;
+}
+
+.topbar-button .active {
+    background: #fcb312;
+}
+
+/* Switch */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+    margin: 16px;
+    float: right;
+    margin: 20px 30px;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: -4px;
+    bottom: 0px;
+    background-color: #f3f3f3;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+    -webkit-box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .switch-slider {
+    background-color: #fcaf12;
+}
+
+input:focus + .witch-slider {
+    box-shadow: 0 0 1px #fcaf12;
+}
+
+input:checked + .switch-slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.sun {
+    margin: 12px 4px 2px 2px;
+    color: #d27b18;
+    font-size: 15px;
+}
+.moon{
+    margin: 12px 6px 2px 0px;
+    color: #ababab;
+    font-size: 15px;
+}
+
+/* Popup */
+
+.popup-button {
+    font-family: 'ubuntu', sans-serif;
+    color: var(--text);
+    font-size: 15px;
+    width: 115px;
+    border: 0;
+    padding: 10px 0px 0px 0px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    background: var(--background);
+}
+
+.popup-button:hover {
+    outline: none;
+    color: #fcaf12;
+}
+
+.popup-button.active {
+    background: #fcb312;
+}
+
+/* Toolbar */
+
+.toolbar-button {
+    font-size: 16px;
+    border: 0px;
+    width: 48px;
+    padding: 24px 15px 0px 15px;
+    margin: 0;
+    cursor: pointer;
+    color: var(--text);
+    background: var(--background);
+    outline: 0;
+}
+
+.toolbar-button:hover {
+    outline: none;
+    color: #fcaf12;
+}
+
+.toolbar-button.active {
+    color: #fcaf12
+}
+
+.last {
+    font-size: 16px;
+    border: 0px;
+    width: 48px;
+    padding: 24px 15px 24px 15px;
+    margin: 0;
+    cursor: pointer;
+    background: var(--background);
+}
+
+.toolbar {
+    min-height: 20px;
+    background: var(--background);
+    width: 50px;
+    left: 60px;
+    position: fixed;
+    -webkit-box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin-top: 63px;
+    z-index: 10;
+}
+
+.tools {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-right: 1px solid lightgray
+}
+
+/* Popup */
+
+.popup {
+    display: inline-block;
+    position: relative
+}
+
+.popup:hover .popup-window {
+    color: #fcaf12
+}
+
+.container .popup:hover .popup-window {
+    display: block
+}
+
+.popup-window {
+    z-index: 1;
+    font-family: 'Buenard', sans-serif;
+    display: none;
+    position: absolute;
+    background-color: var(--background);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    margin: -30px 45px;
+    padding: 3px 15px 10px 15px;
+    outline: 0;
+}
+
+.container .popup .popup-window.hover-popup {
+    display: block
+}
+
+.popup-item {
+    cursor: pointer;
+    color: var(--text);
+    cursor: pointer;
+    font-family: 'Buenard', sans-serif;
+    background: var(--background);
+    border: 0;
+    width: 100%;
+    padding: 10px;
+    outline: 0px;
+}
+
+.Heading {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.Subheading {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Body {
+    font-size: 21px;
+}
+
+.Caption {
+    font-size: 18px;
+}
+
+.popup-item i {
+    min-width: 100px;
+    padding: auto 40px
+}
+
+.popup-item:hover {
+    color: #fcaf12;
+}
+
+.popup-item.active {
+    color: #fcaf12;
+}
+
+.popup-window .url-input {
+    padding: 5px display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.popup-window .url-input input {
+    display: block;
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid #fcaf12;
+    padding: 24px 30px 5px 0px;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--background);
+}
+
+/* Container, Editor and Content */
+
+.container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.content {
+    font-family: 'Buenard', sans-serif;
+    font-size: 21px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-height: 900px;
+    padding: 10px;
+    overflow-wrap: break-word;
+    background: var(--background);
+    color: var(--text);
+    border: 0;
+    border-radius: 4px;
+    outline: 0px;
+}
+
+.editor {
+    font-family: 'Buenard', sans-serif;
+    display: block;
+    max-width: 900px;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: auto;
+    padding: 50px 50px 50px 150px;
+
+}
+
+#counter {
+    font-family: 'ubuntu', sans-serif;
+    position: absolute;
+    padding: 2px 5px 0 5px;
+    font-size: 15px;
+    color: #999;
+    font-weight: 100;
+    right: 0;
+    bottom: -40px;
+    width: 42px;
+    text-align: center;
+}
+
+/* Variables */
+
+:root {
+    --background: #fff;
+    --text: #333;
+    --highlight: #fcaf12;
+}
+
+.dark-theme {
+    --background: #333;
+    --text: #d3d3d3;
+    background: var(--background);
+
+}
+
+/* Print Settings */
+
+@media print {
+    .toolbar,
+    .topbar {
+        visibility: hidden;
+    }
+
+    .editor {
+        visibility: hidden;
+        padding: 0px 20px 50px 20px;
+        height: auto;
+        overflow: visible;
+    }
+
+    .content {
+        visibility: visible;
+    }
+}
