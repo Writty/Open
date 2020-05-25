@@ -1,5 +1,6 @@
 window.onload = function () {
     trigger();
+    setupEventListenerForThemeSwitch();
     popupInit();
 
 }
@@ -120,10 +121,12 @@ function agent() {
 
 // Theme Switch //
 
-$("#theme-switch").on("click", () => {
-    $("body").toggleClass("dark-theme");
-});
-
+function setupEventListenerForThemeSwitch() {
+    var themeSwitch = document.getElementById("theme-switch");
+    themeSwitch.addEventListener("click", function() {
+        document.body.classList.toggle("dark-theme");
+    })
+}
 
 // Print //
 
