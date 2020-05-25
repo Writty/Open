@@ -54,7 +54,6 @@ function run(cmd, ele, value = null) {
     let status = document.execCommand(cmd, false, value);
     let block;
     if (!status) {
-        console.log(cmd)
         switch (cmd) {
             case 'insertLink':
                 value = prompt('Enter url');
@@ -62,10 +61,15 @@ function run(cmd, ele, value = null) {
                     value = 'http://' + value;
                 }
                 document.execCommand('createLink', false, value);
-                break;
+
+                // Overrides inherited attribute "contenteditable" from parent
+                // which would otherwise prevent anchor tag from being interacted with.
+                atag = document.getSelection().focusNode.parentNode;
+                atag.setAttribute("contenteditable", "false");
+
+		            break;
         }
     }
-    console.log(status)
 }
 
 // Insert Image //
