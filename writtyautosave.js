@@ -1,6 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() { 
-    AutoSave.start();
-});
+
+ $(document).ready(function() {
+            AutoSave.start();
+        })
+
 
 var AutoSave = (function () {
 
@@ -67,10 +69,11 @@ var AutoSave = (function () {
 
 // Clear All //
 
-function clearStorage() {
-    if (confirm("Are you sure you want to create a new text? This will erase all the content.")) {
-        window.localStorage.clear();
-        document.getElementById("content").innerHTML= "<p>Once upon a time...✏️</p>";
-        location.reload();
-    }
-}
+        function clearStorage() {
+            window.localStorage.clear();
+            $('#content').contents().find('html').html();
+
+            if (confirm("Are you sure you want to create a new text? This will erase all the content.")) {
+                location.reload();
+            }
+        }
