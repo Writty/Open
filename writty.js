@@ -67,7 +67,7 @@ function run(cmd, ele, value = null) {
                 atag = document.getSelection().focusNode.parentNode;
                 atag.setAttribute("contenteditable", "false");
 
-		            break;
+                break;
         }
     }
 }
