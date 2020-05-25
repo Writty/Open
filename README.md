@@ -30,10 +30,6 @@ Things it would be nice to include in the future
 
 You are more than welcome to contribute with some of the points above or anything you consider.
 
-## Current Bugs
-
-* In the webapp version the **insert Link** function doesn't work. It seems to be related to the **console.log** action.
-
 ## Credits
 
 Special Thanks to [Graeme Fulton](https://github.com/GraemeFulton) and [Raul Riera](https://github.com/raulriera) for all the support and the code lessons.
