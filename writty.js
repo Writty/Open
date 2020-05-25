@@ -1,7 +1,7 @@
 window.onload = function () {
     trigger();
     popupInit();
-    setupEventListenerForThemeSwitch();
+
 }
 // Styling: Headings, Bold, Italic, Underline, Quotes, Lists //
 
@@ -120,12 +120,9 @@ function agent() {
 
 // Theme Switch //
 
-function setupEventListenerForThemeSwitch() {
-    var themeSwitch = document.getElementById("theme-switch");
-    themeSwitch.addEventListener("click", function() {
-        document.body.classList.toggle("dark-theme");
-    })
-}
+$("#theme-switch").on("click", () => {
+    $("body").toggleClass("dark-theme");
+});
 
 
 // Print //
