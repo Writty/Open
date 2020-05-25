@@ -1,4 +1,4 @@
-# writty
+# Writty
 A free open-source text editor that helps you focus on what matters.
 For more information please visit [Writty](https://iamcharlie.design/writty/)
 
