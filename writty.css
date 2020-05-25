@@ -163,11 +163,13 @@ input:checked + .switch-slider:before {
     margin: 12px 4px 2px 2px;
     color: #d27b18;
     font-size: 15px;
+    vertical-align: -.17em;
 }
 .moon{
     margin: 12px 6px 2px 0px;
     color: #ababab;
     font-size: 15px;
+    vertical-align: -.17em;
 }
 
 /* Popup */
@@ -289,7 +291,7 @@ input:checked + .switch-slider:before {
     background: var(--background);
     border: 0;
     width: 100%;
-    padding: 10px;
+    padding: 6px 3px 6px 3px;
     outline: 0px;
 }
 
@@ -398,12 +400,12 @@ input:checked + .switch-slider:before {
 
 :root {
     --background: #fff;
-    --text: #333;
+    --text: #33363C;
     --highlight: #fcaf12;
 }
 
 .dark-theme {
-    --background: #333;
+    --background: #33363C;
     --text: #d3d3d3;
     background: var(--background);
 
