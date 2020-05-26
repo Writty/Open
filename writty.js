@@ -1,6 +1,7 @@
 window.onload = function () {
     trigger();
     setupEventListenerForThemeSwitch();
+    initialCheckForTheme()
     popupInit();
 
 }
@@ -124,7 +125,7 @@ function agent() {
 function setupEventListenerForThemeSwitch() {
     var themeSwitch = document.getElementById("theme-switch");
     themeSwitch.addEventListener("click", function() {
-        document.body.classList.toggle("dark-theme");
+        toggleThemePreference();
     })
 }
 
@@ -135,4 +136,53 @@ function printPDF() {
     var printContent = document.getElementById('content').innerHTML;
     window.print();
 
+}
+
+// Check for theme //
+
+function initialCheckForTheme() {
+    // Default to light-theme
+    var themePreference = "light-theme";    
+
+    // Local storage is used to override OS theme settings
+    if(localStorage.getItem("theme-preference")){
+        if(localStorage.getItem("theme-preference") === "dark-theme"){
+            var themePreference = "dark-theme";
+        }
+    } else if(!window.matchMedia) {
+        // matchMedia method not supported
+        return false;
+    } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        // OS theme setting detected as dark
+        var themePreference = "dark-theme";
+    }
+
+    if (themePreference === "dark-theme") {
+        var themeSwitch = document.getElementById("theme-switch");
+        themeSwitch.checked = true;
+    }
+
+    localStorage.setItem("theme-preference", themePreference)
+    document.body.classList.add(themePreference);
+}
+
+// Toggle current theme //
+
+function toggleThemePreference() {
+    var currentThemePreference = localStorage.getItem("theme-preference");
+
+    switch(currentThemePreference) {
+        case "light-theme":
+            localStorage.setItem("theme-preference", "dark-theme");
+
+            document.body.classList.remove("light-theme");
+            document.body.classList.add("dark-theme");
+            break;
+        case "dark-theme":
+            localStorage.setItem("theme-preference", "light-theme");
+
+            document.body.classList.remove("dark-theme");
+            document.body.classList.add("light-theme");
+            break;
+      }
 }
