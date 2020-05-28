@@ -19,6 +19,7 @@ Writty is a simple text editor built with:
 * Insert Link
 * Print PDF
 * Word Counter
+* Light/Dark Mode
 
 ## WishList
 Things it would be nice to include in the future
