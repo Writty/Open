@@ -383,6 +383,11 @@ input:checked + .switch-slider:before {
 
 }
 
+[contenteditable] {
+    background: var(--background);
+    color: var(--text);
+  }
+
 #counter {
     font-family: 'ubuntu', sans-serif;
     position: absolute;
