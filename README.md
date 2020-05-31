@@ -24,9 +24,8 @@ Writty is a simple text editor built with:
 ## WishList
 Things it would be nice to include in the future
 
-* HTML View
 * Image Editor
-* Export in more formats (TXT,HTML)
+* Export text in more formats (TXT,HTML)
 * Markdown implementation
 
 You are more than welcome to contribute with some of the points above or anything you consider.
