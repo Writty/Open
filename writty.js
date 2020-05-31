@@ -186,3 +186,12 @@ function toggleThemePreference() {
             break;
       }
 }
+
+// Paste plain text //
+
+var ce = document.querySelector('[contenteditable]')
+ce.addEventListener('paste', function (e) {
+  e.preventDefault()
+  var text = e.clipboardData.getData('text/plain')
+  document.execCommand('insertText', false, text)
+})
