@@ -10,7 +10,7 @@ Writty is a simple text editor built with:
 * HTML
 * CSS
 
-## Functionalities
+## Features
 
 * 5 Font Styles (Headline, Subheadlin, Body, Caption and Quote)
 * Main Editor Functions (Bold, italic, Underline, Lists}
