@@ -435,3 +435,16 @@ input:checked + .switch-slider:before {
         visibility: visible;
     }
 }
+
+/* Break Points */
+
+@media only screen and (max-width: 680px) {
+
+    .toolbar {
+        left: 0px;
+    }
+    .editor{
+        padding: 50px 20px 50px 70px;
+    }
+    
+}
