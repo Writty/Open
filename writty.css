@@ -90,6 +90,7 @@ blockquote {
     border-right: solid 1.2px #cdcdcd;
     height: 40px;
     margin-top: 5px;
+    outline: none;
 }
 
 .topbar-button:hover {
