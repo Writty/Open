@@ -3,18 +3,18 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-var AutoSave = (function () {
+const AutoSave = (function () {
 
-    var timer = null;
+    let timer = null;
 
 //Save to local storage //
 
     function save() {
         
-        var editorContent = document.getElementById('content').innerHTML
+        const editorContent = document.getElementById('content').innerHTML;
 
         if (editorContent) {
-            localStorage.setItem('AutoSave' + document.location, editorContent)
+            localStorage.setItem('AutoSave' + document.location, editorContent);
         }
 
     }
@@ -24,7 +24,7 @@ var AutoSave = (function () {
     function restore() {
 
         //get the content from local storage
-        var savedContent = localStorage.getItem('AutoSave' + document.location)
+        const savedContent = localStorage.getItem('AutoSave' + document.location);
 
         //if it found some
         if (savedContent) {
@@ -40,7 +40,7 @@ var AutoSave = (function () {
 
         start: function () {
 
-            var editor = document.getElementById('content')
+            const editor = document.getElementById('content');
 
             if (editor)
                 restore();
@@ -60,11 +60,11 @@ var AutoSave = (function () {
                 timer = null;
             }
         }
-    }
+    };
     
 
 
-}())
+}());
 
 // Clear All //
 
