@@ -179,9 +179,9 @@ input:checked + .switch-slider:before {
     font-family: 'ubuntu', sans-serif;
     color: var(--text);
     font-size: 15px;
-    width: 115px;
+    width: 131px;
     border: 0;
-    padding: 10px 0px 0px 0px;
+    padding: 12px 0px 3px 0px;
     cursor: pointer;
     text-align: left;
     display: flex;
@@ -271,8 +271,7 @@ input:checked + .switch-slider:before {
     display: none;
     position: absolute;
     background-color: var(--background);
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    border-radius: 4px;
     -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     margin: -30px 45px;
@@ -445,7 +444,8 @@ input:checked + .switch-slider:before {
 
 @media print {
     .toolbar,
-    .topbar {
+    .topbar,
+    .logo {
         visibility: hidden;
     }
 
