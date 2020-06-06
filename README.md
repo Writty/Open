@@ -12,8 +12,8 @@ Writty is a simple text editor built with:
 
 ## Features
 
-* 5 Font Styles (Headline, Subheadlin, Body, Caption and Quote)
-* Main Editor Functions (Bold, italic, Underline, Lists}
+* 5 Font Styles (Headline, Subheadline, Body, Caption and Quote)
+* Main Editor Functions (Bold, Italic, Underline, Lists}
 * Image Uploader
 * Autosave Session (LocalStorage)
 * Insert Link
