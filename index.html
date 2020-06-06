@@ -67,7 +67,15 @@
                     <input type="file" name="imageUpload" hidden id="imageUpload" accept=".gif,.jpg,.jpeg,.png">
                 </div>
             </div>
-            <button title="Download PDF" class="toolbar-button last" onclick='printPDF()'><i class="fas fa-download"></i></button>
+            <div class="popup">
+                <button title="Download PDF" class="toolbar-button last"><i class="fas fa-download"></i></button>
+                <div class="popup-window">
+                    <button title="Download PDF" class="popup-button" onclick='printPDF()'>Download as PDF</button>
+                    <button title="Download PDF" class="popup-button" onclick='downloadContent("txt")'>Download as TXT</button>
+                    <button title="Download PDF" class="popup-button" onclick='downloadContent("html")'>Download as HTML</button>
+                </div>
+
+            </div>
             <span id="counter">0</span>
         </div>
 
