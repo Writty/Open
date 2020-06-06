@@ -136,6 +136,34 @@ function printPDF() {
 
 }
 
+function downloadContent(type) {
+    let editorContent = ''
+    if (type === 'txt') {
+        editorContent = document.getElementById('content').textContent;
+    } else {
+        editorContent =`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Writty</title>
+        </head>
+            <body>
+                ${document.getElementById('content').innerHTML}
+            </body>
+        </html>
+        `
+    }
+
+    const linkElement = document.createElement("a")
+    linkElement.setAttribute("download", `writty.${type}`)
+    linkElement.setAttribute("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(editorContent))
+    linkElement.click()
+
+    document.body.removeChild(linkElement);
+}
+
 // Toggle RTL //
 
 function toggleRTL() {
@@ -152,7 +180,7 @@ function toggleRTL() {
 
 function initialCheckForTheme() {
     // Default to light-theme
-    var themePreference = "light-theme";    
+    var themePreference = "light-theme";
 
     // Local storage is used to override OS theme settings
     if(localStorage.getItem("theme-preference")){
