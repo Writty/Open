@@ -1,10 +1,10 @@
 window.onload = function () {
     trigger();
     setupEventListenerForThemeSwitch();
-    initialCheckForTheme()
+    initialCheckForTheme();
     popupInit();
 
-}
+};
 // Styling: Headings, Bold, Italic, Underline, Quotes, Lists //
 
 document.querySelectorAll('[data-edit]').forEach(btn =>
@@ -19,20 +19,15 @@ function edit(ev) {
 
 // Functions: Links and Images //
 
-var btns = document.querySelectorAll('[data-edt]');
+const btns = document.querySelectorAll('[data-edt]');
 
 function Space(aID) {
 
     return document.getElementById(aID);
-    if (document.getElementById(aID)) {
-        return document.getElementById(aID).contentDocument;
-    } else {
-        return document.Space[aID].document;
-    }
 }
 
 function trigger() {
-    let space = document.getElementById('content')
+    let space = document.getElementById('content');
     space.designMode = 'on';
     space.addEventListener('mouseup', agent);
     space.addEventListener('keyup', agent);
@@ -41,11 +36,11 @@ function trigger() {
 //Buttons Commands //
 
     for (let b of btns) {
-        b.addEventListener('click', function (event) {
+        b.addEventListener('click', () => {
             run(b.dataset.edt, b, b.dataset.param);
             document.getElementById('content').focus();
             document.getElementById('content').focus();
-        })
+        });
     }
 
 }
@@ -54,7 +49,6 @@ function trigger() {
 
 function run(cmd, ele, value = null) {
     let status = document.execCommand(cmd, false, value);
-    let block;
     if (!status) {
         switch (cmd) {
             case 'insertLink':
@@ -77,27 +71,27 @@ function run(cmd, ele, value = null) {
 // Insert Image //
 
 if (window.File && window.FileList && window.FileReader) {
-    var filesInput = document.getElementById("imageUpload");
+    const filesInput = document.getElementById("imageUpload");
 
     filesInput.addEventListener("change", function (event) {
 
-        var files = event.target.files; //FileList object
-        var output = document.getElementById("content");
+        const files = event.target.files; //FileList object
+        const output = document.getElementById("content");
 
-        for (var i = 0; i < files.length; i++) {
-            var file = files[i];
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
 
             //Only pics
             if (!file.type.match('image'))
                 continue;
 
-            var picReader = new FileReader();
+            const picReader = new FileReader();
 
-            picReader.addEventListener("load", function (event) {
+            picReader.addEventListener("load", (event) => {
 
-                var picSrc = event.target.result;
+                const picSrc = event.target.result;
 
-                var imgThumbnailElem = "<div class='imgView'><img  src='" + picSrc + "'" +
+                const imgThumbnailElem = "<div class='imgView'><img  src='" + picSrc + "'" +
                     "title='" + file.name + "'/><h5 text-align: center;>Caption</h5></div>";
 
                 output.innerHTML = output.innerHTML + imgThumbnailElem;
@@ -123,17 +117,16 @@ function agent() {
 // Theme Switch //
 
 function setupEventListenerForThemeSwitch() {
-    var themeSwitch = document.getElementById("theme-switch");
+    const themeSwitch = document.getElementById("theme-switch");
     themeSwitch.addEventListener("click", function() {
         toggleThemePreference();
-    })
+    });
 }
 
 // Print //
 
 function printPDF() {
-
-    var printContent = document.getElementById('content').innerHTML;
+    const printContent = document.getElementById('content').innerHTML;
     window.print();
 
 }
@@ -142,34 +135,34 @@ function printPDF() {
 
 function initialCheckForTheme() {
     // Default to light-theme
-    var themePreference = "light-theme";    
+    let themePreference = "light-theme";    
 
     // Local storage is used to override OS theme settings
     if(localStorage.getItem("theme-preference")){
         if(localStorage.getItem("theme-preference") === "dark-theme"){
-            var themePreference = "dark-theme";
+            themePreference = "dark-theme";
         }
     } else if(!window.matchMedia) {
         // matchMedia method not supported
         return false;
     } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
         // OS theme setting detected as dark
-        var themePreference = "dark-theme";
+        themePreference = "dark-theme";
     }
 
     if (themePreference === "dark-theme") {
-        var themeSwitch = document.getElementById("theme-switch");
+        const themeSwitch = document.getElementById("theme-switch");
         themeSwitch.checked = true;
     }
 
-    localStorage.setItem("theme-preference", themePreference)
+    localStorage.setItem("theme-preference", themePreference);
     document.body.classList.add(themePreference);
 }
 
 // Toggle current theme //
 
 function toggleThemePreference() {
-    var currentThemePreference = localStorage.getItem("theme-preference");
+    let currentThemePreference = localStorage.getItem("theme-preference");
 
     switch(currentThemePreference) {
         case "light-theme":
@@ -189,9 +182,9 @@ function toggleThemePreference() {
 
 // Paste plain text //
 
-var ce = document.querySelector('[contenteditable]')
+const ce = document.querySelector('[contenteditable]');
 ce.addEventListener('paste', function (e) {
-  e.preventDefault()
-  var text = e.clipboardData.getData('text/plain')
-  document.execCommand('insertText', false, text)
-})
+  e.preventDefault();
+  const text = e.clipboardData.getData('text/plain');
+  document.execCommand('insertText', false, text);
+});
