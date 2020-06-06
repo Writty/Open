@@ -72,7 +72,7 @@ blockquote {
 }
 
 .topbar-row {
-    max-width: 900px;
+    max-width: 950px;
     margin: auto;
     display: block;
     text-align: right;
@@ -111,7 +111,7 @@ blockquote {
     height: 24px;
     margin: 16px;
     float: right;
-    margin: 20px 30px;
+    margin: 20px 10px 20px 30px;
 }
 
 .switch input {
@@ -164,13 +164,13 @@ input:checked + .switch-slider:before {
     margin: 12px 4px 2px 2px;
     color: #d27b18;
     font-size: 15px;
-    vertical-align: -.17em;
+    vertical-align: -.1em;
 }
 .moon{
     margin: 12px 6px 2px 0px;
     color: #ababab;
     font-size: 15px;
-    vertical-align: -.17em;
+    vertical-align: -.1em;
 }
 
 /* Popup */
@@ -402,17 +402,41 @@ input:checked + .switch-slider:before {
     text-align: center;
 }
 
+.bottom-bar {
+    position: fixed;
+    float: left;
+    background: var(--background);
+    width: 100%;
+    padding: 15px 0 5px 0;
+    font-size: 15px;
+    text-align: right;
+    bottom: 0;
+}
+
+.bottom-row {
+    max-width: 950px;
+    margin: auto;
+    display: block;
+}
+
+.logo{
+    opacity: var(--alpha);
+    padding-right: 10px;
+}
+
 /* Variables */
 
 :root {
     --background: #fff;
     --text: #33363C;
     --highlight: #fcaf12;
+    --alpha: 0.4;
 }
 
 .dark-theme {
     --background: #33363C;
     --text: #d3d3d3;
+    --alpha: 1;
     background: var(--background);
 
 }
