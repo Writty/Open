@@ -57,22 +57,22 @@
             <button title="Unordered list" class="toolbar-button" data-edit="insertUnorderedList"><i class="fas fa-list-ul"></i></button>
             <button title="Ordered list" class="toolbar-button" data-edit="insertOrderedList"><i class="fas fa-list-ol"></i></button>
 
-            <button title="RTL Mode" class="toolbar-button" onclick="toggleRTL()"><i class="fas fa-exchange-alt"></i></button>
+            <button title="RTL mode" class="toolbar-button" onclick="toggleRTL()"><i class="fas fa-exchange-alt"></i></button>
 
             <button title="Insert link" class="toolbar-button" type="button" data-edt="insertLink"><i class="fas fa-link"></i></button>
             <div class="popup">
                 <button title="Image" type="button" class="popup-button toolbar-button no-caret"><i class="fas fa-image"></i></button>
                 <div class="popup-window">
-                    <label class="popup-button" for="imageUpload"><i class="fas fa-arrow-circle-up"></i>&nbsp;Upload Image</label>
+                    <label class="popup-button" for="imageUpload"><i class="fas fa-arrow-circle-up"></i>&nbsp; Upload Image</label>
                     <input type="file" name="imageUpload" hidden id="imageUpload" accept=".gif,.jpg,.jpeg,.png">
                 </div>
             </div>
             <div class="popup">
-                <button title="Download PDF" class="toolbar-button last"><i class="fas fa-download"></i></button>
+                <button title="Download" class="toolbar-button last"><i class="fas fa-download"></i></button>
                 <div class="popup-window">
-                    <button title="Download PDF" class="popup-button" onclick='printPDF()'>Download as PDF</button>
-                    <button title="Download PDF" class="popup-button" onclick='downloadContent("txt")'>Download as TXT</button>
-                    <button title="Download PDF" class="popup-button" onclick='downloadContent("html")'>Download as HTML</button>
+                    <button title="Download PDF" class="popup-button" onclick='printPDF()'><i class="fas fa-file-pdf"></i>&nbsp; Download PDF</button>
+                    <button title="Download HTML" class="popup-button" onclick='downloadContent("html")'><i class="fas fa-file-code"></i>&nbsp; Download HTML</button>
+                    <button title="Download TXT" class="popup-button" onclick='downloadContent("txt")'><i class="fas fa-file"></i>&nbsp; Download TXT</button>
                 </div>
 
             </div>
