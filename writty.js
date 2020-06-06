@@ -2,8 +2,6 @@ window.onload = function () {
     trigger();
     setupEventListenerForThemeSwitch();
     initialCheckForTheme()
-    popupInit();
-
 }
 // Styling: Headings, Bold, Italic, Underline, Quotes, Lists //
 
@@ -136,6 +134,18 @@ function printPDF() {
     var printContent = document.getElementById('content').innerHTML;
     window.print();
 
+}
+
+// Toggle RTL //
+
+function toggleRTL() {
+    const editorElement = document.querySelector("#editor")
+    const currentDir = editorElement.getAttribute("dir")
+    if (!currentDir || currentDir === "ltr") {
+        editorElement.setAttribute("dir", "rtl")
+    } else {
+        editorElement.setAttribute("dir", "ltr")
+    }
 }
 
 // Check for theme //
