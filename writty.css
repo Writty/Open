@@ -83,11 +83,10 @@ blockquote {
     color: var(--text);
     font-size: 15px;
     border: 0;
-    padding: 20px 30px 30px 21px;
+    padding: 20px 24px 30px 21px;
     cursor: pointer;
     background: var(--background);
     float: right;
-    border-right: solid 1.2px #cdcdcd;
     height: 40px;
     margin-top: 5px;
     outline: none;
@@ -111,7 +110,7 @@ blockquote {
     height: 24px;
     margin: 16px;
     float: right;
-    margin: 20px 10px 20px 30px;
+    margin: 20px 10px 20px 15px;
 }
 
 .switch input {
