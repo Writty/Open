@@ -31,7 +31,8 @@
       <input id="theme-switch" type="checkbox">
                     <div class="switch-slider" title="Theme switch"> <span class="sun"><i class="fas fa-sun"></i></span><span class="moon"><i class="fas fa-moon"></i></span></div>
     </label>
-                <button class="topbar-button" onclick="clearStorage()" type="button"><i class="fas fa-pencil-alt"></i> New Text</button>
+                <button class="topbar-button" onclick="toggleRTL()" type="button"><i class="fas fa-exchange-alt"></i>&nbsp; RTL Mode</button>
+                <button class="topbar-button" onclick="clearStorage()" type="button"><i class="fas fa-pencil-alt"></i>&nbsp; New Text</button>
             </div>
         </div>
 
@@ -56,8 +57,6 @@
 
             <button title="Unordered list" class="toolbar-button" data-edit="insertUnorderedList"><i class="fas fa-list-ul"></i></button>
             <button title="Ordered list" class="toolbar-button" data-edit="insertOrderedList"><i class="fas fa-list-ol"></i></button>
-
-            <button title="RTL mode" class="toolbar-button" onclick="toggleRTL()"><i class="fas fa-exchange-alt"></i></button>
 
             <button title="Insert link" class="toolbar-button" type="button" data-edt="insertLink"><i class="fas fa-link"></i></button>
             <div class="popup">
