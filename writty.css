@@ -474,3 +474,9 @@ input:checked + .switch-slider:before {
     }
     
 }
+
+/* SimpleBar custom styles */
+
+.simplebar-scrollbar::before {
+  background-color: var(--text);
+}
