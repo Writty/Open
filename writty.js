@@ -135,8 +135,7 @@ function downloadContent(type) {
         editorContent = document.getElementById('content').textContent;
     } else if(type === 'md') {
         const turndownService = new TurndownService();
-        editorContent = document.getElementById('content').innerHTML;
-        const markdown = turndownService.turndown(editorContent);
+        editorContent = turndownService.turndown(document.getElementById('content').innerHTML);
     } else {
         editorContent =`
         <!DOCTYPE html>
