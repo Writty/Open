@@ -27,6 +27,7 @@ Things it would be nice to include in the future
 
 * Image Editor
 * Markdown implementation
+* Autosave RTL preferences
 
 You are more than welcome to contribute with some of the points above or anything you consider.
 
