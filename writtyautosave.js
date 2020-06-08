@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const AutoSave = (function () {
 
+    const getEditorElement = () => document.querySelector("#editor")
+
     let timer = null;
 
 //Save to local storage //
@@ -17,6 +19,9 @@ const AutoSave = (function () {
             localStorage.setItem('AutoSave' + document.location, editorContent);
         }
 
+
+        const dir = getEditorElement().getAttribute("dir")
+        localStorage.setItem('dirIsRtl', dir === "rtl" );
     }
 
 //Load from local storage //
@@ -32,6 +37,9 @@ const AutoSave = (function () {
             document.getElementById('content').innerHTML =savedContent;
 
         }
+
+        const dirIsRtl = localStorage.getItem('dirIsRtl');
+        getEditorElement().setAttribute("dir", JSON.parse(dirIsRtl) ? "rtl" : "ltr")
     }
 
     return {
