@@ -133,6 +133,10 @@ function downloadContent(type) {
     let editorContent = ''
     if (type === 'txt') {
         editorContent = document.getElementById('content').textContent;
+    } else if(type === 'md') {
+        const turndownService = new TurndownService();
+        editorContent = document.getElementById('content').innerHTML;
+        const markdown = turndownService.turndown(editorContent);
     } else {
         editorContent =`
         <!DOCTYPE html>
