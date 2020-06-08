@@ -32,7 +32,7 @@ You are more than welcome to contribute with some of the points above or anythin
 
 ## Credits
 
-Special Thanks to [Graeme Fulton](https://github.com/GraemeFulton) and [Raul Riera](https://github.com/raulriera) for all the support and the code lessons. 
+Special Thanks to [@GraemeFulton](https://github.com/GraemeFulton) and [@raulriera](https://github.com/raulriera) for all the support and the code lessons. 
 
 Big Thanks to:
 [@twanmulder](https://github.com/twanmulder), [@filiptronicek](https://github.com/filiptronicek), [@kenanchristian](https://github.com/kenanchristian), [@phosph](https://github.com/phosph) and [@morpheus7CS](https://github.com/morpheus7CS) for helping me bringing Writty to the next level.
