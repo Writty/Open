@@ -169,6 +169,10 @@ function toggleRTL() {
         editorElement.setAttribute("dir", "rtl")
     } else {
         editorElement.setAttribute("dir", "ltr")
+    } {
+        var nav = document.querySelector('.topbar-button');
+        nav.classList.toggle('active');
+        e.preventDefault();
     }
 }
 
