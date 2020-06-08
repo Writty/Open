@@ -97,8 +97,8 @@ blockquote {
     color: #fcaf12;
 }
 
-.topbar-button .active {
-    background: #fcb312;
+.topbar-button.active {
+    color: #fcb312;
 }
 
 /* Switch */
