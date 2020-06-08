@@ -362,6 +362,8 @@ input:checked + .switch-slider:before {
     width: 100%;
     min-height: 900px;
     padding: 10px;
+    padding-top: 0;
+    margin-top: -4px;
     overflow-wrap: break-word;
     background: var(--background);
     color: var(--text);
@@ -378,8 +380,8 @@ input:checked + .switch-slider:before {
     overflow-y: auto;
     overflow-x: hidden;
     margin: auto;
-    padding: 50px 50px 50px 150px;
-
+    padding: 0px 50px 50px 150px;
+    margin-top: 64px;
 }
 
 [contenteditable] {
@@ -471,4 +473,10 @@ input:checked + .switch-slider:before {
         padding: 50px 20px 50px 70px;
     }
     
+}
+
+/* SimpleBar custom styles */
+
+.simplebar-scrollbar::before {
+  background-color: var(--text);
 }
