@@ -35,4 +35,4 @@ You are more than welcome to contribute with some of the points above or anythin
 Special Thanks to [Graeme Fulton](https://github.com/GraemeFulton) and [Raul Riera](https://github.com/raulriera) for all the support and the code lessons. 
 
 Big Thanks to:
-@twanmulder, @filiptronicek, @kenanchristian, @phosph and @morpheus7CS for helping me bringing Writty to the next level.
+[@twanmulder](https://github.com/twanmulder), [@filiptronicek](https://github.com/filiptronicek), [@kenanchristian](https://github.com/kenanchristian), [@phosph](https://github.com/phosph) and [@morpheus7CS](https://github.com/morpheus7CS) for helping me bringing Writty to the next level.
