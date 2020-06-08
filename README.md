@@ -19,17 +19,20 @@ Writty is a simple text editor built with:
 * Insert Link
 * Save as PDF, HTML, Markdown and TXT
 * RTL Support
-* Word Counter
+* Autosave RTL preferences
+* Word Counter 
 * Light/Dark Mode
 
 ## WishList
 Things it would be nice to include in the future
 
 * Image Editor
-* Autosave RTL preferences
 
 You are more than welcome to contribute with some of the points above or anything you consider.
 
 ## Credits
 
-Special Thanks to [Graeme Fulton](https://github.com/GraemeFulton) and [Raul Riera](https://github.com/raulriera) for all the support and the code lessons.
+Special Thanks to [Graeme Fulton](https://github.com/GraemeFulton) and [Raul Riera](https://github.com/raulriera) for all the support and the code lessons. 
+
+Big Thanks to:
+@twanmulder, @filiptronicek, @kenanchristian, @phosph and @morpheus7CS for helping me bringing Writty to the next level.
