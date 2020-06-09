@@ -134,7 +134,7 @@ function downloadContent(type) {
     if (type === 'txt') {
         editorContent = document.getElementById('content').textContent;
     } else if(type === 'md') {
-        const turndownService = new TurndownService();
+        const turndownService = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced', emDelimiter: '*' });
         editorContent = turndownService.turndown(document.getElementById('content').innerHTML);
     } else {
         editorContent =`
