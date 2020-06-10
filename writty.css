@@ -444,22 +444,79 @@ input:checked + .switch-slider:before {
 /* Print Settings */
 
 @media print {
+
     .toolbar,
     .topbar,
     .logo {
-        visibility: hidden;
+        display: none;
     }
 
     .editor {
-        visibility: hidden;
-        padding: 0px 20px 50px 20px;
+        visibility: visible;
+        margin: 0px 0px 0px -100px;
         height: auto;
         overflow: visible;
     }
 
     .content {
+        font-size: 17px;
+        color: #33363C;
         visibility: visible;
+        overflow: visible;
     }
+
+    [contenteditable] {
+        color: #33363C;
+    }
+
+    h1 {
+        font-size: 24px;
+        page-break-after: avoid;
+        page-break-inside: avoid
+    }
+    h2 {
+        font-size: 21px;
+        page-break-after: avoid;
+        page-break-inside: avoid
+    }
+    h5 {
+        font-size: 14px;
+        page-break-after: avoid;
+        page-break-inside: avoid
+    }
+    p {
+        font-size: 17px;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+    }
+    img {
+        page-break-inside: avoid;
+        page-break-after: avoid;
+    }
+
+    li {
+        font-size: 17px;
+        color: #33363C;
+        page-break-before: avoid
+    }
+
+    a {
+        color: #33363C;
+    }
+
+    blockquote {
+        font-size: 17px;
+        color: #33363C;
+    }
+
+    span[style] {
+        color: #33363C!important;
+    }
+
+}
+
+@page {
+    margin: 1cm
 }
 
 /* Break Points */
