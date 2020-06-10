@@ -38,4 +38,4 @@ Big Thanks to:
 [@twanmulder](https://github.com/twanmulder), [@filiptronicek](https://github.com/filiptronicek), [@kenanchristian](https://github.com/kenanchristian), [@phosph](https://github.com/phosph) and [@morpheus7CS](https://github.com/morpheus7CS) for helping me bringing Writty to the next level.
 
 ## License
-[MIT](https://opensource.org/licenses/MIT) | [Carlos Yllobre](https://iamcharlie.design/)
+[MIT](https://opensource.org/licenses/MIT) © [Carlos Yllobre](https://iamcharlie.design/)
