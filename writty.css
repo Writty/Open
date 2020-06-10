@@ -445,6 +445,10 @@ input:checked + .switch-slider:before {
 
 @media print {
 
+    div {
+        word-wrap: normal !important;
+    }
+
     .toolbar,
     .topbar,
     .logo {
@@ -453,13 +457,14 @@ input:checked + .switch-slider:before {
 
     .editor {
         visibility: visible;
-        margin: 0px 0px 0px -100px;
+        margin: 0px 0px 0px -110px;
         height: auto;
         overflow: visible;
     }
 
     .content {
         font-size: 17px;
+        background: none;
         color: #33363C;
         visibility: visible;
         overflow: visible;
@@ -471,33 +476,20 @@ input:checked + .switch-slider:before {
 
     h1 {
         font-size: 24px;
-        page-break-after: avoid;
-        page-break-inside: avoid
     }
     h2 {
         font-size: 21px;
-        page-break-after: avoid;
-        page-break-inside: avoid
-    }
-    h5 {
-        font-size: 14px;
-        page-break-after: avoid;
-        page-break-inside: avoid
     }
     p {
         font-size: 17px;
-        page-break-inside: avoid;
-        page-break-after: avoid;
     }
-    img {
-        page-break-inside: avoid;
-        page-break-after: avoid;
+    h5 {
+        font-size: 14px;
     }
 
     li {
         font-size: 17px;
         color: #33363C;
-        page-break-before: avoid
     }
 
     a {
@@ -516,7 +508,9 @@ input:checked + .switch-slider:before {
 }
 
 @page {
-    margin: 1cm
+    /*The A4 paper size is 210 mm wide by 297 mm long*/
+    size: 210mm 297mm;
+    margin: 10mm;
 }
 
 /* Break Points */
