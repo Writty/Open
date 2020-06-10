@@ -2,7 +2,7 @@
 A free open-source text editor that helps you focus on what matters.
 For more information please visit [Writty](https://iamcharlie.design/writty/)
 
-**Version 1.0**
+**Version 1.4**
 
 Writty is a simple text editor built with:
 
