@@ -234,3 +234,23 @@ ce.addEventListener('paste', function (e) {
   const text = e.clipboardData.getData('text/plain');
   document.execCommand('insertText', false, text);
 });
+
+// Paste image //
+
+document.getElementById('content').addEventListener("paste", (event) => {
+        var clipboardData = event.clipboardData;
+        clipboardData.types.forEach((type, i) => {
+            const fileType = clipboardData.items[i].type;
+            if (fileType.match(/image.*/)) {
+                const file = clipboardData.items[i].getAsFile();
+                const reader = new FileReader();
+                reader.onload = function (evt) {
+                    const dataURL = evt.target.result;
+                    const img = document.createElement("img");
+                    img.src = dataURL;
+                    document.execCommand('insertHTML', true, img.outerHTML);
+                };
+                reader.readAsDataURL(file);
+            }
+        })
+    });
