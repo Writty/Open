@@ -14,7 +14,7 @@ Writty is a simple text editor built with:
 
 * 5 Font Styles (Headline, Subheadline, Body, Caption and Quote)
 * Main Editor Functions (Bold, Italic, Underline, Lists}
-* Image Uploader
+* Image Uploader or paste from clipboard
 * Autosave Session (LocalStorage)
 * Insert Link
 * Save as PDF, HTML, Markdown and TXT
@@ -27,7 +27,6 @@ Writty is a simple text editor built with:
 Things it would be nice to include in the future
 
 * Image Resizing
-* Paste Image
 
 You are more than welcome to contribute with some of the points above or anything you consider.
 
