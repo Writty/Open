@@ -27,6 +27,7 @@ Writty is a simple text editor built with:
 Things it would be nice to include in the future
 
 * Image Resizing
+* Paste Image
 
 You are more than welcome to contribute with some of the points above or anything you consider.
 
