@@ -90,7 +90,7 @@ if (window.File && window.FileList && window.FileReader) {
                 const picSrc = event.target.result;
 
                 const imgThumbnailElem = "<div class='imgView'><img  src='" + picSrc + "'" +
-                    "title='" + file.name + "'/><h5 text-align: center;>Caption</h5></div>";
+                    "title='" + file.name + "'/><h5 style=text-align:center;>Caption</h5></div>";
 
                 output.innerHTML = output.innerHTML + imgThumbnailElem;
 
