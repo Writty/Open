@@ -55,6 +55,16 @@ blockquote {
     margin-inline-end: 0px;
 }
 
+
+pre {
+    white-space: pre-wrap;
+    background-color: var(--darker-background);
+    color: var(--text);
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 .imgView {
     width: fit-content;
     padding: 20px 0px 20px 0px;
@@ -427,6 +437,7 @@ input:checked + .switch-slider:before {
 
 :root {
     --background: #fff;
+    --darker-background: #eee;
     --text: #33363C;
     --highlight: #fcaf12;
     --alpha: 0.4;
@@ -434,6 +445,7 @@ input:checked + .switch-slider:before {
 
 .dark-theme {
     --background: #33363C;
+    --darker-background: #1111136F;
     --text: #d3d3d3;
     --alpha: 1;
     background: var(--background);
@@ -522,11 +534,17 @@ input:checked + .switch-slider:before {
     .editor{
         padding: 50px 20px 50px 70px;
     }
-    
+
 }
 
 /* SimpleBar custom styles */
 
 .simplebar-scrollbar::before {
   background-color: var(--text);
+}
+
+
+/* Hide file input */
+input[type="file"]{
+    display: none;
 }

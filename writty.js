@@ -1,6 +1,7 @@
 window.onload = function () {
     trigger();
     setupEventListenerForThemeSwitch();
+    setupEventListenerForFileImport();
     initialCheckForTheme()
 };
 // Styling: Headings, Bold, Italic, Underline, Quotes, Lists //
@@ -121,6 +122,32 @@ function setupEventListenerForThemeSwitch() {
     });
 }
 
+// File Import //
+function triggerImportFile() {
+    const fileInput = document.getElementById("import-file")
+    fileInput.click()
+}
+
+function setupEventListenerForFileImport() {
+    const fileInput = document.getElementById("import-file")
+    fileInput.addEventListener("change", (event) => {
+        const file = event.currentTarget.files[0]
+        if(!file){ return }
+        const extension = file.name.split(".").pop()
+
+        if(extension === "html" || "md"){
+            const reader = new FileReader()
+            reader.onload = function(){
+                importContent(extension, reader.result)
+            }
+
+            reader.readAsText(file)
+        } else {
+            alert("File type is not supported for import")
+        }
+    })
+}
+
 // Print //
 
 function printPDF() {
@@ -160,6 +187,24 @@ function downloadContent(type) {
     document.body.removeChild(linkElement);
 }
 
+function importContent(fileExtension, content) {
+    const editorElement = document.getElementById('content')
+    if(fileExtension === 'html'){
+        const sanitizedContent = HtmlSanitizer.SanitizeHtml(content)
+        const tempElement = document.createElement("html")
+        tempElement.innerHTML = sanitizedContent
+        editorElement.innerHTML = tempElement.querySelector("body").innerHTML
+    } else if(fileExtension === "md") {
+        const converter = new showdown.Converter()
+        const html = converter.makeHtml(content)
+        editorElement.innerHTML = html
+    } else {
+        alert("Import only supports Markdown & HTML File")
+    }
+
+    agent()
+}
+
 // Toggle RTL //
 
 function toggleRTL() {
@@ -180,7 +225,7 @@ function toggleRTL() {
 
 function initialCheckForTheme() {
     // Default to light-theme
-    let themePreference = "light-theme";    
+    let themePreference = "light-theme";
 
 
     // Local storage is used to override OS theme settings
