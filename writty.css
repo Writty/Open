@@ -433,25 +433,6 @@ input:checked + .switch-slider:before {
     padding-right: 10px;
 }
 
-/* Variables */
-
-:root {
-    --background: #fff;
-    --darker-background: #eee;
-    --text: #33363C;
-    --highlight: #fcaf12;
-    --alpha: 0.4;
-}
-
-.dark-theme {
-    --background: #33363C;
-    --darker-background: #1111136F;
-    --text: #d3d3d3;
-    --alpha: 1;
-    background: var(--background);
-
-}
-
 /* Print Settings */
 
 @media print {
@@ -524,6 +505,42 @@ input:checked + .switch-slider:before {
     margin: 10mm;
 }
 
+/* Scrollbar */
+
+::-webkit-scrollbar{
+	width: 8px;
+	background: var(--background);
+}
+::-webkit-scrollbar-thumb
+{
+	border-radius: 8px;
+	background-color: var(--darker-background);
+}
+
+/* Hide file input */
+input[type="file"]{
+    display: none;
+}
+
+/* Variables */
+
+:root {
+    --background: #fff;
+    --darker-background: #e6e6e6;
+    --text: #33363C;
+    --highlight: #fcaf12;
+    --alpha: 0.4;
+}
+
+.dark-theme {
+    --background: #33363C;
+    --darker-background: #272930;
+    --text: #d3d3d3;
+    --alpha: 1;
+    background: var(--background);
+
+}
+
 /* Break Points */
 
 @media only screen and (max-width: 680px) {
@@ -535,16 +552,4 @@ input:checked + .switch-slider:before {
         padding: 50px 20px 50px 70px;
     }
 
-}
-
-/* SimpleBar custom styles */
-
-.simplebar-scrollbar::before {
-  background-color: var(--text);
-}
-
-
-/* Hide file input */
-input[type="file"]{
-    display: none;
 }
