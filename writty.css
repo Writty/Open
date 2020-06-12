@@ -65,6 +65,10 @@ pre {
     font-size: 16px;
 }
 
+a:-webkit-any-link {
+ color: color: var(--text);
+}
+
 .imgView {
     width: fit-content;
     padding: 20px 0px 20px 0px;
@@ -92,7 +96,7 @@ pre {
     color: var(--text);
     font-size: 15px;
     border: 0;
-    padding: 20px 24px 30px 21px;
+    padding: 20px 27px 30px 24px;
     cursor: pointer;
     background: var(--background);
     float: right;
