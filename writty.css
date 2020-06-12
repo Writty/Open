@@ -548,7 +548,10 @@ input[type="file"]{
 /* Break Points */
 
 @media only screen and (max-width: 680px) {
-
+	
+    .topbar-button {
+        padding: 20px 17px 30px 24px;
+    }
     .toolbar {
         left: 0px;
     }
