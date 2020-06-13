@@ -170,12 +170,12 @@ accordion-button.active {
 }
 
 .sidebar-bottom {
-    position: fixed;
+    position: absolute;
     width: 200px;
     font-size: 15px;
     text-align: left;
     bottom: 0;
-    height: 200px;
+    height: 250px;
 }
 
 /* Switch */
@@ -484,7 +484,7 @@ input:checked + .switch-slider:before {
     opacity: var(--alpha);
     padding-right: 10px;
     bottom: 10px;
-    position: absolute;
+    position: fixed;
 }
 
 /* Print Settings */
