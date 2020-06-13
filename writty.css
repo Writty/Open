@@ -58,15 +58,15 @@ blockquote {
 
 pre {
     white-space: pre-wrap;
-    background-color: var(--darker-background);
+    background-color: var(--dark-background);
     color: var(--text);
     padding: 12px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 a:-webkit-any-link {
- color: color: var(--text);
+    color: color: var(--text);
 }
 
 .imgView {
@@ -74,44 +74,108 @@ a:-webkit-any-link {
     padding: 20px 0px 20px 0px;
 }
 
-.topbar {
-    overflow: hidden;
-    background: var(--background);
+/* Sidebar */
+
+.sidebar {
     position: fixed;
     top: 0;
-    width: 100%;
-    font-size: 18px;
-    z-index: 10;
+    right: -250px;
+    z-index: 0;
+    width: 200px;
+    height: 100%;
+    padding: 30px 14px;
+    background: var(--dark-background);
+    transition: all 300ms ease-in-out;
 }
 
-.topbar-row {
-    max-width: 950px;
-    margin: auto;
-    display: block;
-    text-align: right;
-}
-
-.topbar-button {
+.sidebar-button,
+.save-button {
     font-family: 'ubuntu', sans-serif;
     color: var(--text);
     font-size: 15px;
     border: 0;
-    padding: 20px 27px 30px 24px;
+    padding: 20px;
     cursor: pointer;
-    background: var(--background);
-    float: right;
+    background: none;
     height: 40px;
-    margin-top: 5px;
     outline: none;
 }
 
-.topbar-button:hover {
+.save-button {
+    margin-top: 10px;
+}
+
+.sidebar-button:hover,
+.save-button:hover {
     outline: none;
     color: #fcaf12;
 }
 
-.topbar-button.active {
+.sidebar-button.active,
+save-button.active,
+accordion-button.active {
     color: #fcb312;
+}
+
+.sidebar-secondary {
+    font-size: 11px;
+    color: #999;
+    padding: 0px 0px 0px 20px;
+
+}
+
+.sidebar-section {
+    font-size: 15px;
+    color: #999;
+    width: 200px;
+    font-family: 'ubuntu', sans-serif;
+    position: relative;
+    margin: 10px 24px 15px 24px;
+    float: left;
+
+}
+
+.sidebar-accordion {
+    max-height: 0px;
+    width: 120px;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.save-button:hover ~ .sidebar-accordion,
+.sidebar-accordion:hover {
+    opacity: 1;
+    max-height: 120px;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.accordion-button {
+    font-family: 'ubuntu', sans-serif;
+    color: var(--text);
+    font-size: 15px;
+    border: 0;
+    padding: 6px 0px 0px 40px;
+    cursor: pointer;
+    background: none;
+    height: 24px;
+    outline: none;
+
+}
+
+.accordion-button:hover {
+    outline: none;
+    color: #fcaf12;
+}
+
+.sidebar-bottom {
+    position: fixed;
+    width: 200px;
+    font-size: 15px;
+    text-align: left;
+    bottom: 0;
+    height: 200px;
 }
 
 /* Switch */
@@ -119,11 +183,9 @@ a:-webkit-any-link {
 .switch {
     position: relative;
     display: inline-block;
-    width: 45px;
-    height: 24px;
-    margin: 16px;
-    float: right;
-    margin: 20px 10px 20px 15px;
+    width: 36px;
+    height: 20px;
+    margin: 8px 10px 8px 24px;
 }
 
 .switch input {
@@ -137,23 +199,23 @@ a:-webkit-any-link {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background: var(--light-background);
     -webkit-transition: .4s;
     transition: .4s;
-    border-radius: 34px;
+    border-radius: 30px;
 }
 
 .switch-slider:before {
     position: absolute;
     content: "";
-    height: 24px;
-    width: 24px;
-    left: -4px;
+    height: 20px;
+    width: 20px;
+    left: 0;
     bottom: 0px;
     background-color: #f3f3f3;
     -webkit-transition: .4s;
     transition: .4s;
-    border-radius: 50%;
+    border-radius: 30px;
     -webkit-box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.2);
     box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.2);
 }
@@ -167,22 +229,46 @@ input:focus + .witch-slider {
 }
 
 input:checked + .switch-slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
 }
 
-.sun {
-    margin: 12px 4px 2px 2px;
-    color: #d27b18;
+.switch-label {
+    font-family: 'ubuntu', sans-serif;
+    color: var(--text);
     font-size: 15px;
-    vertical-align: -.1em;
+    background: none;
+    height: 40px;
+    outline: none;
+    position: absolute;
+    margin: 2px 0px 0px 44px;
+    width: 100px;
 }
-.moon{
-    margin: 12px 6px 2px 0px;
-    color: #ababab;
-    font-size: 15px;
-    vertical-align: -.1em;
+
+/* Menu Icon */
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    padding: 12px;
+    font-size: 20px;
+    z-index: 1;
+    transition: all 300ms ease-in-out;
+}
+
+#menu-toggle:checked ~ .sidebar {
+    right: 0px;
+}
+
+#menu-toggle:checked + .menu-icon {
+    right: 247px;
 }
 
 /* Popup */
@@ -211,12 +297,25 @@ input:checked + .switch-slider:before {
 
 /* Toolbar */
 
+.toolbar {
+    min-height: 20px;
+    background: var(--background);
+    width: 45px;
+    left: 60px;
+    position: fixed;
+    -webkit-box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin-top: 3px;
+    z-index: 10;
+}
+
 .toolbar-button {
-    font-size: 16px;
+    font-size: 15px;
     border: 0px;
-    width: 48px;
-    padding: 24px 15px 0px 15px;
-    margin: 0;
+    width: 44px;
+    padding: 20px 15px 0px 15px;
+    margin: 3px 0 0 0;
     cursor: pointer;
     color: var(--text);
     background: var(--background);
@@ -233,26 +332,13 @@ input:checked + .switch-slider:before {
 }
 
 .last {
-    font-size: 16px;
+    font-size: 15px;
     border: 0px;
-    width: 48px;
-    padding: 24px 15px 24px 15px;
-    margin: 0;
+    width: 44px;
+    padding-bottom: 17px;
+    margin: 0 0 3px 0;
     cursor: pointer;
     background: var(--background);
-}
-
-.toolbar {
-    min-height: 20px;
-    background: var(--background);
-    width: 50px;
-    left: 60px;
-    position: fixed;
-    -webkit-box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    margin-top: 63px;
-    z-index: 10;
 }
 
 .tools {
@@ -286,12 +372,12 @@ input:checked + .switch-slider:before {
     border-radius: 4px;
     -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    margin: -30px 45px;
+    margin: -30px 40px;
     padding: 3px 15px 10px 15px;
     outline: 0;
 }
 
-.container .popup .popup-window.hover-popup {
+.popup .popup-window.hover-popup {
     display: block
 }
 
@@ -338,33 +424,24 @@ input:checked + .switch-slider:before {
     color: #fcaf12;
 }
 
-.popup-window .url-input {
-    padding: 5px display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column
-}
-
-.popup-window .url-input input {
-    display: block;
-    outline: none;
-    border: 0;
-    border-bottom: 2px solid #fcaf12;
-    padding: 24px 30px 5px 0px;
-    font-size: 14px;
-    color: var(--text);
-    background: var(--background);
-}
-
 /* Container, Editor and Content */
 
 .container {
-    display: inline-block;
     position: relative;
     width: 100%;
+    margin: 0 auto;
+}
+
+.editor {
+    font-family: 'Buenard', sans-serif;
+    display: block;
+    max-width: 900px;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: auto;
+    padding: 0px 50px 50px 150px;
+    margin-top: 64px;
 }
 
 .content {
@@ -385,22 +462,10 @@ input:checked + .switch-slider:before {
     outline: 0px;
 }
 
-.editor {
-    font-family: 'Buenard', sans-serif;
-    display: block;
-    max-width: 900px;
-    height: 500px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    margin: auto;
-    padding: 0px 50px 50px 150px;
-    margin-top: 64px;
-}
-
 [contenteditable] {
     background: var(--background);
     color: var(--text);
-  }
+}
 
 #counter {
     font-family: 'ubuntu', sans-serif;
@@ -415,26 +480,11 @@ input:checked + .switch-slider:before {
     text-align: center;
 }
 
-.bottom-bar {
-    position: fixed;
-    float: left;
-    background: var(--background);
-    width: 100%;
-    padding: 15px 0 5px 0;
-    font-size: 15px;
-    text-align: right;
-    bottom: 0;
-}
-
-.bottom-row {
-    max-width: 950px;
-    margin: auto;
-    display: block;
-}
-
-.logo{
+.logo {
     opacity: var(--alpha);
     padding-right: 10px;
+    bottom: 10px;
+    position: absolute;
 }
 
 /* Print Settings */
@@ -446,8 +496,8 @@ input:checked + .switch-slider:before {
     }
 
     .toolbar,
-    .topbar,
-    .logo {
+    .menu-icon,
+    .sidebar {
         display: none;
     }
 
@@ -461,13 +511,13 @@ input:checked + .switch-slider:before {
     .content {
         font-size: 17px;
         background: none;
-        color: #33363C;
+        color: #272930;
         visibility: visible;
         overflow: visible;
     }
 
     [contenteditable] {
-        color: #33363C;
+        color: #272930;
     }
 
     h1 {
@@ -485,20 +535,20 @@ input:checked + .switch-slider:before {
 
     li {
         font-size: 17px;
-        color: #33363C;
+        color: #272930;
     }
 
     a {
-        color: #33363C;
+        color: #272930;
     }
 
     blockquote {
         font-size: 17px;
-        color: #33363C;
+        color: #272930;
     }
 
     span[style] {
-        color: #33363C!important;
+        color: #272930!important;
     }
 
 }
@@ -511,18 +561,19 @@ input:checked + .switch-slider:before {
 
 /* Scrollbar */
 
-::-webkit-scrollbar{
-	width: 8px;
-	background: var(--background);
+::-webkit-scrollbar {
+    width: 8px;
+    background: var(--background);
 }
-::-webkit-scrollbar-thumb
-{
-	border-radius: 8px;
-	background-color: var(--darker-background);
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: var(--dark-background);
 }
 
 /* Hide file input */
-input[type="file"]{
+
+input[type="file"] {
     display: none;
 }
 
@@ -530,15 +581,16 @@ input[type="file"]{
 
 :root {
     --background: #fff;
-    --darker-background: #e6e6e6;
-    --text: #33363C;
-    --highlight: #fcaf12;
+    --light-background: #ccc;
+    --dark-background: #f3f3f3;
+    --text: #272930;
     --alpha: 0.4;
 }
 
 .dark-theme {
-    --background: #33363C;
-    --darker-background: #272930;
+    --background: #272930;
+    --light-background: #484857;
+    --dark-background: #24242b;
     --text: #d3d3d3;
     --alpha: 1;
     background: var(--background);
@@ -548,14 +600,11 @@ input[type="file"]{
 /* Break Points */
 
 @media only screen and (max-width: 680px) {
-	
-    .topbar-button {
-        padding: 20px 17px 30px 24px;
-    }
+
     .toolbar {
         left: 0px;
     }
-    .editor{
+    .editor {
         padding: 50px 20px 50px 70px;
     }
 
