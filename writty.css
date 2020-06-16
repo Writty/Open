@@ -74,6 +74,10 @@ a:-webkit-any-link {
     padding: 20px 0px 20px 0px;
 }
 
+:focus {
+    outline: 1px solid var(--hightlight);   
+}
+
 /* Sidebar */
 
 .sidebar {
@@ -98,7 +102,6 @@ a:-webkit-any-link {
     cursor: pointer;
     background: none;
     height: 40px;
-    outline: none;
 }
 
 .save-button {
@@ -160,7 +163,6 @@ accordion-button.active {
     cursor: pointer;
     background: none;
     height: 24px;
-    outline: none;
 
 }
 
@@ -240,7 +242,6 @@ input:checked + .switch-slider:before {
     font-size: 15px;
     background: none;
     height: 40px;
-    outline: none;
     position: absolute;
     margin: 2px 0px 0px 44px;
     width: 100px;
@@ -287,7 +288,6 @@ input:checked + .switch-slider:before {
 }
 
 .popup-button:hover {
-    outline: none;
     color: #fcaf12;
 }
 
@@ -319,7 +319,6 @@ input:checked + .switch-slider:before {
     cursor: pointer;
     color: var(--text);
     background: var(--background);
-    outline: 0;
 }
 
 .toolbar-button:hover {
@@ -374,7 +373,6 @@ input:checked + .switch-slider:before {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     margin: -30px 40px;
     padding: 3px 15px 10px 15px;
-    outline: 0;
 }
 
 .popup .popup-window.hover-popup {
@@ -390,7 +388,6 @@ input:checked + .switch-slider:before {
     border: 0;
     width: 100%;
     padding: 6px 3px 6px 3px;
-    outline: 0px;
 }
 
 .Heading {
@@ -583,6 +580,7 @@ input[type="file"] {
     --background: #fff;
     --light-background: #ccc;
     --dark-background: #f3f3f3;
+    --hightlight: #24242b;
     --text: #272930;
     --alpha: 0.4;
 }
@@ -591,6 +589,7 @@ input[type="file"] {
     --background: #272930;
     --light-background: #484857;
     --dark-background: #24242b;
+    --hightlight: #fcaf12;
     --text: #d3d3d3;
     --alpha: 1;
     background: var(--background);
