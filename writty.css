@@ -314,7 +314,7 @@ input:checked + .switch-slider:before {
     font-size: 15px;
     border: 0px;
     width: 44px;
-    padding: 20px 15px 0px 15px;
+    padding: 12px 15px 12px 15px;
     margin: 3px 0 0 0;
     cursor: pointer;
     color: var(--text);
@@ -330,12 +330,16 @@ input:checked + .switch-slider:before {
     color: #fcaf12
 }
 
+.first {
+    padding-top: 17px;
+}
+
 .last {
     font-size: 15px;
     border: 0px;
     width: 44px;
     padding-bottom: 17px;
-    margin: 0 0 3px 0;
+    margin: 1px 0 3px 0;
     cursor: pointer;
     background: var(--background);
 }
