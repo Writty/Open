@@ -2,7 +2,9 @@ window.onload = function () {
     trigger();
     setupEventListenerForThemeSwitch();
     setupEventListenerForFileImport();
-    initialCheckForTheme()
+    setupEventListenerForCounter();
+    initialCheckForTheme();
+    initialCheckForCounter();
 };
 // Styling: Headings, Bold, Italic, Underline, Quotes, Lists //
 
@@ -110,8 +112,71 @@ if (window.File && window.FileList && window.FileReader) {
 // Word Counter //
 
 function agent() {
-    document.getElementById('counter').innerText = document.getElementById('content').innerText.length;
+    let currentCounterPreference = localStorage.getItem("counter-preference");
+
+    var counterTotal;
+
+    switch(currentCounterPreference) {
+        case "character-count":
+            counterTotal = characterCount(document.getElementById('content').innerText);
+            break;
+        case "word-count":
+            counterTotal = wordCount(document.getElementById('content').innerText);
+            break;
+    }
+
+    document.getElementById('counter').innerText = counterTotal;
 }
+
+// Count All Characters //
+function characterCount(str) { 
+    return str.length;
+}
+
+// Count Words //
+function wordCount(str) { 
+    return str.match(/\b[-?(\w+)?]+\b/gi).length;
+}
+
+// Check For Counter //
+function initialCheckForCounter() {
+    let counterPreference = "character-count";
+
+    // Local storage is used to override OS theme settings
+    if(localStorage.getItem("counter-preference")){
+        if(localStorage.getItem("counter-preference") === "word-count"){
+            counterPreference = "word-count";
+        }
+    }
+
+    localStorage.setItem("counter-preference", counterPreference);
+}
+
+// Toggle Current Counter //
+function toggleCounterPreference() {
+    let currentCounterPreference = localStorage.getItem("counter-preference");
+
+    switch(currentCounterPreference) {
+        case "character-count":
+            localStorage.setItem("counter-preference", "word-count");
+            break;
+        case "word-count":
+            localStorage.setItem("counter-preference", "character-count");
+            break;
+    }
+
+    agent();
+}
+
+
+// Counter Switch //
+function setupEventListenerForCounter() {
+    const counter = document.getElementById("counter");
+    counter.addEventListener("click", function() {
+        toggleCounterPreference();
+    });
+}
+
 
 // Theme Switch //
 
