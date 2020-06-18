@@ -2,7 +2,7 @@
 A free open-source text editor that helps you focus on what matters.
 For more information please visit [Writty](https://iamcharlie.design/writty/)
 
-**Version 1.4.1**
+**Version 1.4.2**
 
 Writty is a simple text editor built with:
 
@@ -20,12 +20,13 @@ Writty is a simple text editor built with:
 * Save as PDF, HTML, Markdown and TXT
 * RTL Support
 * Autosave RTL preferences
-* Word Counter 
+* Word and Character Counter 
 * Light/Dark Mode
 
 ## WishList
-Things it would be nice to include in the future
+Things it would be nice to include:
 
+* Insert Link function in a custom modal (no prompt)
 * Image Resizing
 
 You are more than welcome to contribute with some of the points above or anything you consider.
@@ -35,7 +36,7 @@ You are more than welcome to contribute with some of the points above or anythin
 Special Thanks to [@GraemeFulton](https://github.com/GraemeFulton) and [@raulriera](https://github.com/raulriera) for all the support and the code lessons. 
 
 Big Thanks to:
-[@twanmulder](https://github.com/twanmulder), [@filiptronicek](https://github.com/filiptronicek), [@kenanchristian](https://github.com/kenanchristian), [@phosph](https://github.com/phosph) and [@morpheus7CS](https://github.com/morpheus7CS) for helping me bringing Writty to the next level.
+[@twanmulder](https://github.com/twanmulder), [@filiptronicek](https://github.com/filiptronicek), [@kenanchristian](https://github.com/kenanchristian), [@phosph](https://github.com/phosph), [@morpheus7CS](https://github.com/morpheus7CS) and [@Lewis-Marshall](https://github.com/Lewis-Marshall) for helping me bringing Writty to the next level.
 
 ## License
 [MIT](https://opensource.org/licenses/MIT) © [Carlos Yllobre](https://iamcharlie.design/)
