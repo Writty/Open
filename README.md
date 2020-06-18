@@ -1,6 +1,6 @@
 # Writty
 A free open-source text editor that helps you focus on what matters.
-For more information please visit [Writty](https://iamcharlie.design/writty/)
+For more information please visit [Writty](https://writtyapp.com/)
 
 **Version 1.4.2**
 
