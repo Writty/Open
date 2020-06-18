@@ -1,6 +1,7 @@
 body {
     margin: 0;
     color: var(--text);
+    background: var(--background);
     font-size: 21px;
 }
 
@@ -479,6 +480,7 @@ input:checked + .switch-slider:before {
     bottom: -40px;
     width: 42px;
     text-align: center;
+    cursor: pointer;
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
