@@ -602,6 +602,8 @@ input:checked + .switch-slider:before {
 [tooltip][flow^="down"]:hover::after {
     -webkit-animation: tooltips-vert 500ms ease-out forwards;
     animation: tooltips-vert 500ms ease-out forwards;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
 }
 
 /* Print Settings */
