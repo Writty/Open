@@ -99,14 +99,13 @@ a:-webkit-any-link {
     color: var(--text);
     font-size: 15px;
     border: 0;
-    padding: 20px;
+    padding: 12px 20px;
     cursor: pointer;
     background: none;
-    height: 40px;
 }
 
 .save-button {
-    margin-top: 10px;
+    margin-top: -5px;
 }
 
 .sidebar-button:hover,
@@ -489,8 +488,8 @@ input:checked + .switch-slider:before {
 
 .logo {
     opacity: var(--alpha);
-    padding-right: 10px;
-    bottom: 10px;
+    padding: 10px;
+    bottom: 5px;
     position: fixed;
 }
 
