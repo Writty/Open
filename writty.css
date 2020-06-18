@@ -159,10 +159,10 @@ accordion-button.active {
     color: var(--text);
     font-size: 15px;
     border: 0;
-    padding: 6px 0px 0px 40px;
+    padding: 5px;
     cursor: pointer;
     background: none;
-    height: 24px;
+    margin-left: 33px;
 
 }
 
