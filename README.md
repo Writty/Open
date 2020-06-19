@@ -2,7 +2,7 @@
 A free open-source text editor that helps you focus on what matters.
 For more information please visit [Writty](https://writtyapp.com/)
 
-**Version 1.4.2**
+**Version 1.4.3**
 
 Writty is a simple text editor built with:
 
@@ -16,7 +16,7 @@ Writty is a simple text editor built with:
 * Main Editor Functions (Bold, Italic, Underline, Lists}
 * Image Uploader or paste from clipboard
 * Autosave Session (LocalStorage)
-* Insert Link
+* Custom Insert Link
 * Save as PDF, HTML, Markdown and TXT
 * RTL Support
 * Autosave RTL preferences
