@@ -256,8 +256,8 @@ input:checked + .switch-slider:before {
 .menu-icon {
     cursor: pointer;
     position: absolute;
-    top: 12px;
-    right: 17px;
+    top: 24px;
+    right: 24px;
     padding: 12px;
     font-size: 20px;
     z-index: 1;
