@@ -27,7 +27,6 @@ Writty is a simple text editor built with:
 Things it would be nice to include:
 
 * Insert Link function in a custom modal (no prompt)
-* Image Resizing
 
 You are more than welcome to contribute with some of the points above or anything you consider.
 
