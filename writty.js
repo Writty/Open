@@ -124,6 +124,11 @@ urlForm.addEventListener('submit',(e) => {
   	document.execCommand("CreateLink", false, urlValue);
 	closeModal();
 	e.preventDefault();
+	
+    // Overrides inherited attribute "contenteditable" from parent
+    // which would otherwise prevent anchor tag from being interacted with.
+    atag = document.getSelection().focusNode.parentNode;
+    atag.setAttribute("contenteditable", "false");
 })
 
 function getSelectionParentElement() {
