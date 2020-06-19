@@ -23,13 +23,6 @@ Writty is a simple text editor built with:
 * Word and Character Counter 
 * Light/Dark Mode
 
-## WishList
-Things it would be nice to include:
-
-* Insert Link function in a custom modal (no prompt)
-
-You are more than welcome to contribute with some of the points above or anything you consider.
-
 ## Credits
 
 Big Thanks to:
