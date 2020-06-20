@@ -129,6 +129,13 @@ urlForm.addEventListener('submit',(e) => {
     // which would otherwise prevent anchor tag from being interacted with.
     atag = document.getSelection().focusNode.parentNode;
     atag.setAttribute("contenteditable", "false");
+	
+    var links = document.getElementsByTagName('a');
+    var len = links.length;
+
+    for (var i = 0; i < len; i++) {
+        links[i].target = "_blank";
+    }
 })
 
 function getSelectionParentElement() {
