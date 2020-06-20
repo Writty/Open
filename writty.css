@@ -302,7 +302,8 @@ input:checked + .switch-slider:before {
     left: 48px;
     bottom: 44px;
     width: 300px;
-    display: none;
+    opacity: 0;
+    transition: opacity 0.2s linear, visibility 0s linear 0.2s;
 }
 
 .modal-window {
@@ -328,8 +329,11 @@ input:checked + .switch-slider:before {
 }
 
 .visible {
+    opacity: 1;
     display: block;
+    transition: opacity 0.2s linear, visibility 0s linear;
 }
+
 .closeModal {
     font-size: 20px;
     cursor: pointer;
