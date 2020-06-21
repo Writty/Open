@@ -310,6 +310,7 @@ input:checked + .switch-slider:before {
     border-radius: 3px;
     transition: all 1s;
     position: relative;
+    z-index: 10001;
 }
 
 .modal input {
@@ -570,6 +571,7 @@ input:checked + .switch-slider:before {
     /* magic! */
     font-family: 'ubuntu', sans-serif;
     text-align: center;
+    font-weight: 200;
     min-width: 3em;
     max-width: 21em;
     white-space: nowrap;
@@ -593,6 +595,18 @@ input:checked + .switch-slider:before {
 [tooltip='']::after {
     display: none !important;
 }
+
+/* Tooltips: Flow Right */
+
+[tooltip][flow^="right"]::before, 
+[tooltip][flow^="right"]::after {
+  top: 50%;
+  left: calc(100% + 5px);
+  -webkit-transform: translate(.2em, -50%);
+  transform: translate(.2em, -50%);
+}
+
+/* Tooltips: Flow Down */
 
 [tooltip][flow^="down"]::after {
     top: calc(100% + 5px);
@@ -648,6 +662,14 @@ input:checked + .switch-slider:before {
     animation: tooltips-vert 500ms ease-out forwards;
     -webkit-animation-delay: 0.5s;
     animation-delay: 0.5s;
+}
+
+[tooltip][flow^="right"]:hover::before,
+[tooltip][flow^="right"]:hover::after {
+  animation: tooltips-horz 500ms ease-out forwards;
+  -webkit-animation: tooltips-horz 500ms ease-out forwards;
+  -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
 }
 
 /* Print Settings */
