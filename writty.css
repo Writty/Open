@@ -272,6 +272,44 @@ input:checked + .switch-slider:before {
     right: 247px;
 }
 
+/* Hide/Show Toolbar */
+
+#toolbar-toggle {
+    display: none;
+}
+
+.hidden-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 175px;
+    padding: 24px;
+    font-size: 17px;
+    z-index: 1;
+    opacity: 0;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    
+}
+
+.hidden-icon:hover {
+    opacity: 1;
+}
+
+#toolbar-toggle:checked ~ .toolbar {
+    left: -60px;
+}
+
+#toolbar-toggle:checked ~ .editor {
+    padding-left: 50px;
+}
+
+#toolbar-toggle:checked + .hidden-icon {
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+}
+
+
 /* Popup */
 
 .popup-button {
@@ -354,6 +392,8 @@ input:checked + .switch-slider:before {
     border-radius: 4px;
     margin-top: 3px;
     z-index: 10;
+    -webkit-transition: all 600ms ease-in-out;
+    transition: all 600ms ease-in-out;
 }
 
 .toolbar-button {
@@ -489,6 +529,8 @@ input:checked + .switch-slider:before {
     margin: auto;
     padding: 0px 50px 50px 150px;
     margin-top: 64px;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
 }
 
 .content {
