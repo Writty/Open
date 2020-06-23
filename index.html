@@ -16,10 +16,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Buenard:wght@400;700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 
-    <!-- JS Library -->
+     <!-- JS Library -->
     <script defer src="https://unpkg.com/turndown/dist/turndown.js"></script>
     <script defer src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/jitbit/HtmlSanitizer@master/HtmlSanitizer.js"></script>
+
+    <!-- SimpleBar core -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
 
     <!--CSS -->
     <link rel="stylesheet" href="writty.css">
@@ -28,19 +32,24 @@
 
 <body>
 
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
+        <div class="container">
 
-    <div class="container">
-        
-        <input type="checkbox" id="toolbar-toggle" />
-        <label for="toolbar-toggle" class="hidden-icon">
-        <i class="fas fa-chevron-left"></i>
-        </label>
+        <div class="topbar">
+            <div class="topbar-row">
+                <label class="switch">
+      <input id="theme-switch" type="checkbox">
+                    <div class="switch-slider" title="Theme switch"> <span class="sun"><i class="fas fa-sun"></i></span><span class="moon"><i class="fas fa-moon"></i></span></div>
+    </label>
+                <button class="topbar-button" onclick="toggleRTL()" type="button"><i class="fas fa-exchange-alt"></i>&nbsp; RTL Mode</button>
+                <button class="topbar-button" onclick="clearStorage()" type="button"><i class="fas fa-pencil-alt"></i>&nbsp; New Text</button>
+                <button class="topbar-button" onclick="triggerImportFile()" type="button"><i class="fas fa-upload"></i>&nbsp; Import Text</button>
+                <input id="import-file" type="file" accept=".md,.html">
+            </div>
+        </div>
 
         <div class="toolbar">
             <div class="popup">
-                <button type="button" class="popup-button toolbar-button first"><i class="fas fa-heading"></i></button>
+                <button type="button" class="popup-button toolbar-button"><i class="fas fa-heading"></i></button>
                 <div class="popup-window">
                     <button title="Heading format" class="popup-item Heading" data-edit="formatBlock:h1">Heading</button>
                     <button title="Subheading format" class="popup-item Subheading" data-edit="formatBlock:h2">Subheading</button>
@@ -51,34 +60,34 @@
             </div>
 
 
-            <button class="toolbar-button" data-edit="bold" tooltip="bold" flow="right"><i class="fas fa-bold"></i></button>
-            <button class="toolbar-button" data-edit="italic" tooltip="italic" flow="right"><i class="fas fa-italic"></i></button>
-            <button class="toolbar-button" data-edit="underline" tooltip="underline" flow="right"><i class="fas fa-underline"></i></button>
-            <button class="toolbar-button" data-edit="formatBlock:blockquote" tooltip="quote" flow="right"><i class="fas fa-quote-right"></i></button>
+            <button title="Bold" class="toolbar-button" data-edit="bold"><i class="fas fa-bold"></i></button>
+            <button title="Italic" class="toolbar-button" data-edit="italic"><i class="fas fa-italic"></i></button>
+            <button title="Underline" class="toolbar-button" data-edit="underline"><i class="fas fa-underline"></i></button>
+            <button title="Quote" class="toolbar-button" data-edit="formatBlock:blockquote"><i class="fas fa-quote-right"></i></button>
 
 
-            <button class="toolbar-button" data-edit="insertUnorderedList" tooltip="bulleted list" flow="right"><i class="fas fa-list-ul"></i></button>
-            <button class="toolbar-button" data-edit="insertOrderedList" tooltip="numbered list" flow="right"><i class="fas fa-list-ol"></i></button>
+            <button title="Unordered list" class="toolbar-button" data-edit="insertUnorderedList"><i class="fas fa-list-ul"></i></button>
+            <button title="Ordered list" class="toolbar-button" data-edit="insertOrderedList"><i class="fas fa-list-ol"></i></button>
 
-            <button class="toolbar-button" type="button" data-edt="insertLink" tooltip="insert link" flow="right"><i class="fas fa-link"></i></button>
-
-            <div class="modal">
-                <div class="modal-window">
-                    <form class="urlForm" name="urlForm">
-                        <input class="url" name="urlField" placeholder="Add URL" />
-                        <button class="closeModal"><i class="fas fa-times" aria-hidden="true"></i></button>
-                    </form>
-                </div>
-            </div>
-
+            <button title="Insert link" class="toolbar-button" type="button" data-edt="insertLink"><i class="fas fa-link"></i></button>
             <div class="popup">
-                <button title="Image" type="button" class="popup-button toolbar-button no-caret last"><i class="fas fa-image"></i></button>
+                <button title="Image" type="button" class="popup-button toolbar-button no-caret"><i class="fas fa-image"></i></button>
                 <div class="popup-window">
                     <label class="popup-button" for="imageUpload"><i class="fas fa-arrow-circle-up"></i>&nbsp; Upload Image</label>
                     <input type="file" name="imageUpload" hidden id="imageUpload" accept=".gif,.jpg,.jpeg,.png">
                 </div>
             </div>
-            <span id="counter" tooltip="words or characters" flow="down">0</span>
+            <div class="popup">
+                <button title="Download" class="toolbar-button last"><i class="fas fa-download"></i></button>
+                <div class="popup-window">
+                    <button class="popup-button" onclick='printPDF()'><i class="fas fa-file-pdf"></i>&nbsp; Download PDF</button>
+                    <button class="popup-button" onclick='downloadContent("html")'><i class="fas fa-file-code"></i>&nbsp; Download HTML</button>
+                    <button class="popup-button" onclick='downloadContent("txt")'><i class="fas fa-file-alt"></i>&nbsp; Download TXT</button>
+                    <button class="popup-button" onclick='downloadContent("md")'><i class="fas fa-file"></i>&nbsp; Download MD</button>
+                </div>
+
+            </div>
+            <span id="counter">0</span>
         </div>
 
         <div id="editor" class="editor" data-simplebar data-simplebar-auto-hide="false">
@@ -89,43 +98,10 @@
 
     </div>
 
-    <div id="sidebar" class="sidebar">
-        <button class="sidebar-button" onclick="clearStorage()" type="button"><i class="fas fa-file"></i>&nbsp; New</button>
-        <button title="Import MD or HTML" class="sidebar-button" onclick="triggerImportFile()" type="button"><i class="fas fa-folder-open"></i>&nbsp; Open File 
-        <br><span class="sidebar-secondary">MD or HTML</span></button>
-        <input id="import-file" type="file" accept=".md,.html">
-
-
-        <button class="save-button"><i class="fas fa-file-download"></i>&nbsp; Save As</button>
-
-        <div class="sidebar-accordion">
-            <button class="accordion-button" onclick='downloadContent("md")'>Markdown</button>
-            <button class="accordion-button" onclick='downloadContent("html")'>HTML</button>
-            <button class="accordion-button" onclick='downloadContent("txt")'>Plain Text</button>
-            <button class="accordion-button" onclick='printPDF()'>PDF <span class="sidebar-secondary" style="padding-left:3px;">Print</span></button>
+    <div class="bottom-bar">
+        <div class="bottom-row">
+            <a href="https://writtyapp.com" target="_blank"><img class="logo" border="0" alt="About Writty" src="writtybottom.svg" width="50"></a>
         </div>
-
-
-        <div class="sidebar-bottom">
-
-            <span class="sidebar-section"> Preferences</span>
-
-            <label class="switch">
-                <input id="theme-switch" type="checkbox">
-                <div class="switch-slider" title="Theme switch"></div>
-                <span class="switch-label"> Dark Mode</span>
-             </label>
-            <br>
-            <label class="switch">
-               <input type="checkbox" onclick="toggleRTL()">
-               <div class="switch-slider" title="Theme switch"></div>
-               <span class="switch-label"> Right to Left</span>
-            </label>
-
-             <a class="logo" href="https://writtyapp.com" target="_blank"><img border="0" alt="About Writty" src="writtybottom.svg" width="50"></a>
-
-        </div>
-
     </div>
 
 
