@@ -48,110 +48,25 @@ function trigger() {
 
 // Insert Link //
 
-Array.prototype.map.call(document.querySelector('button:not([data-edt="insertLink"])'), (action) => {
-	action.addEventListener("click", (e) => {
-		e.preventDefault();
-		document.execCommand(action.dataset.edt, false, action.dataset.value);
-	})
-})
+function run(cmd, ele, value = null) {
+    let status = document.execCommand(cmd, false, value);
+    if (!status) {
+        switch (cmd) {
+            case 'insertLink':
+                value = prompt('Enter url');
+                if (value.slice(0, 4) != 'http') {
+                    value = 'http://' + value;
+                }
+                document.execCommand('createLink', false, value);
 
-// Modal
-const modal = document.querySelector('.modal');
-const closeModal = () => {
-	modal.classList.remove('visible');
-}
-let closeButton = document.querySelector('.closeModal');
-closeButton.addEventListener('click', closeModal);
-document.addEventListener('keyup', function(e) {
-	if (e.keyCode == 27) {
-		closeModal();
-	}
-});
-let otherClicks = (event) => {
-	if (document.querySelector('.modal').contains(event.target)) {
-		return false;
-	} else {
-		closeModal();
-		window.removeEventListener('click', otherClicks);
-	}
-};
-window.addEventListener('click', otherClicks);
-const anchorLink = document.querySelector('button[data-edt="insertLink"]');
+                // Overrides inherited attribute "contenteditable" from parent
+                // which would otherwise prevent anchor tag from being interacted with.
+                atag = document.getSelection().focusNode.parentNode;
+                atag.setAttribute("contenteditable", "false");
 
-anchorLink.addEventListener('click', () => {
-	modal.classList.add('visible');
-	window.savedSel = saveSelection();
-	document.urlForm.urlField.value="";
-	document.urlForm.urlField.focus();
-})
-
-
-function saveSelection() {
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            var ranges = [];
-            for (var i = 0, len = sel.rangeCount; i < len; ++i) {
-                ranges.push(sel.getRangeAt(i));
-            }
-            return ranges;
-        }
-    } else if (document.selection && document.selection.createRange) {
-        return document.selection.createRange();
-    }
-    return null;
-}
-
-function restoreSelection(savedSel) {
-    if (savedSel) {
-        if (window.getSelection) {
-            sel = window.getSelection();
-            sel.removeAllRanges();
-            for (var i = 0, len = savedSel.length; i < len; ++i) {
-                sel.addRange(savedSel[i]);
-            }
-        } else if (document.selection && savedSel.select) {
-            savedSel.select();
+                break;
         }
     }
-}
-
-let urlForm = document.querySelector('.urlForm');
-
-urlForm.addEventListener('submit',(e) => {
-	let urlValue = urlForm.querySelector('.url').value;
-	restoreSelection(window.savedSel);
-  	document.execCommand("CreateLink", false, urlValue);
-	closeModal();
-	e.preventDefault();
-	
-    // Overrides inherited attribute "contenteditable" from parent
-    // which would otherwise prevent anchor tag from being interacted with.
-    atag = document.getSelection().focusNode.parentNode;
-    atag.setAttribute("contenteditable", "false");
-	
-    var links = document.getElementsByTagName('a');
-    var len = links.length;
-
-    for (var i = 0; i < len; i++) {
-        links[i].target = "_blank";
-    }
-})
-
-function getSelectionParentElement() {
-    var parentEl = null, sel;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.rangeCount) {
-            parentEl = sel.getRangeAt(0).commonAncestorContainer;
-            if (parentEl.nodeType != 1) {
-                parentEl = parentEl.parentNode;
-            }
-        }
-    } else if ( (sel = document.selection) && sel.type != "Control") {
-        parentEl = sel.createRange().parentElement();
-    }
-    return parentEl;
 }
 
 
