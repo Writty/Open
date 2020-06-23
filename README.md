@@ -1,6 +1,6 @@
 # Writty
-A free open-source text editor that helps you focus on what matters.
-For more information please visit [Writty](https://writtyapp.com/)
+An open-source text editor that helps you focus on what matters.
+For more information or to install the Chrome extension, please visit [writtyapp.com](https://writtyapp.com/)
 
 **Version 1.4.0**
 
@@ -16,7 +16,7 @@ Writty is a simple text editor built with:
 * Main Editor Functions (Bold, Italic, Underline, Lists}
 * Image Uploader or paste from clipboard
 * Autosave Session (LocalStorage)
-* Custom Insert Link
+* Add URL
 * Save as PDF, HTML, Markdown and TXT
 * RTL Support
 * Autosave RTL preferences
