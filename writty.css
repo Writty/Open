@@ -70,6 +70,10 @@ pre {
     padding: 20px 0px 20px 0px;
 }
 
+:focus {
+    outline: 1px solid var(--hightlight);   
+}
+
 .topbar {
     overflow: hidden;
     background: var(--background);
@@ -98,7 +102,6 @@ pre {
     float: right;
     height: 40px;
     margin-top: 5px;
-    outline: none;
 }
 
 .topbar-button:hover {
@@ -216,7 +219,6 @@ input:checked + .switch-slider:before {
     cursor: pointer;
     color: var(--text);
     background: var(--background);
-    outline: 0;
 }
 
 .toolbar-button:hover {
@@ -300,7 +302,6 @@ input:checked + .switch-slider:before {
     border: 0;
     width: 100%;
     padding: 6px 3px 6px 3px;
-    outline: 0px;
 }
 
 .Heading {
