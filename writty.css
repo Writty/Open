@@ -440,7 +440,7 @@ input:checked + .switch-slider:before {
     --background: #fff;
     --darker-background: #eee;
     --text: #33363C;
-    --highlight: #fcaf12;
+    --hightlight: #24242b;
     --alpha: 0.4;
 }
 
@@ -448,6 +448,7 @@ input:checked + .switch-slider:before {
     --background: #33363C;
     --darker-background: #1111136F;
     --text: #d3d3d3;
+    --hightlight: #fcaf12;
     --alpha: 1;
     background: var(--background);
 
