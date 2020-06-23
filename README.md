@@ -17,7 +17,7 @@ Writty is a simple text editor built with:
 * Image Uploader or paste from clipboard
 * Autosave Session (LocalStorage)
 * Add URL
-* Save as PDF, HTML, Markdown and TXT
+* Export as PDF, HTML, Markdown and TXT
 * RTL Support
 * Autosave RTL preferences
 * Word and Character Counter 
