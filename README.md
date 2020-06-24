@@ -1,4 +1,4 @@
-# Writty
+# Writty™ 
 An open-source text editor that helps you focus on what matters.
 For more information or to install the Chrome extension, please visit [writtyapp.com](https://writtyapp.com/)
 
