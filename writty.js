@@ -214,14 +214,6 @@ function setupEventListenerForFileImport() {
     })
 }
 
-// Print //
-
-function printPDF() {
-    const printContent = document.getElementById('content').innerHTML;
-    window.print();
-
-}
-
 function downloadContent(type) {
     let editorContent = ''
     if (type === 'txt') {
