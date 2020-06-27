@@ -16,10 +16,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Buenard:wght@400;700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 
-     <!-- JS Library -->
+     <!-- JS Libraries -->
     <script defer src="https://unpkg.com/turndown/dist/turndown.js"></script>
     <script defer src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/jitbit/HtmlSanitizer@master/HtmlSanitizer.js"></script>
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
 
     <!-- SimpleBar core -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
@@ -80,7 +81,7 @@
             <div class="popup">
                 <button title="Download" class="toolbar-button last"><i class="fas fa-download"></i></button>
                 <div class="popup-window">
-                    <button class="popup-button" onclick='printPDF()'><i class="fas fa-file-pdf"></i>&nbsp; Download PDF</button>
+                    <button class="accordion-button" onclick="printJS('content','html')">PDF<span class="sidebar-secondary" style="padding-left:3px;">or Print</span></button>
                     <button class="popup-button" onclick='downloadContent("html")'><i class="fas fa-file-code"></i>&nbsp; Download HTML</button>
                     <button class="popup-button" onclick='downloadContent("txt")'><i class="fas fa-file-alt"></i>&nbsp; Download TXT</button>
                     <button class="popup-button" onclick='downloadContent("md")'><i class="fas fa-file"></i>&nbsp; Download MD</button>
