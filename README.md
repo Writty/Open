@@ -23,6 +23,11 @@ Writty is a simple text editor built with:
 * Word and Character Counter 
 * Light/Dark Mode
 
+## Wishlist
+
+* Markdown view
+* HTML view
+
 ## Credits
 
 Big Thanks to:
