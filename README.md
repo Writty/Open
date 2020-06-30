@@ -27,6 +27,7 @@ Writty is a simple text editor built with:
 
 * Markdown view
 * HTML view
+* Image resizing
 
 ## Credits
 
