@@ -1,4 +1,4 @@
-# Writty™ 
+# Writty 
 An open-source text editor that helps you focus on what matters.
 For more information or to install the Chrome extension, please visit [writtyapp.com](https://writtyapp.com/)
 
@@ -29,7 +29,7 @@ Writty is a simple text editor built with:
 * HTML view
 * Image resizing
 
-## Credits
+## Contributors
 
 Big Thanks to:
 [@GraemeFulton](https://github.com/GraemeFulton), [@raulriera](https://github.com/raulriera), [@twanmulder](https://github.com/twanmulder), [@filiptronicek](https://github.com/filiptronicek), [@kenanchristian](https://github.com/kenanchristian), [@phosph](https://github.com/phosph), [@morpheus7CS](https://github.com/morpheus7CS) and [@Lewis-Marshall](https://github.com/Lewis-Marshall) for helping me bringing Writty to the next level.
