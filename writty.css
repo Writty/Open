@@ -190,7 +190,7 @@ input:checked + .switch-slider:before {
     font-family: 'ubuntu', sans-serif;
     color: var(--text);
     font-size: 15px;
-    width: 131px;
+    width: 135px;
     border: 0;
     padding: 12px 0px 3px 0px;
     cursor: pointer;
@@ -410,6 +410,7 @@ input:checked + .switch-slider:before {
     bottom: -40px;
     width: 42px;
     text-align: center;
+    cursor: pointer;
 }
 
 .bottom-bar {
